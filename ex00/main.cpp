@@ -4,6 +4,9 @@ int main()
 {
     Zombie  *z;
 
-    z = newZombie("nameee");
-    randomChump("name");
+    z = newZombie(nullptr);
+    z->announce();
+    randomChump("RadiCue");
+    delete z;
+    return (0);
 }
