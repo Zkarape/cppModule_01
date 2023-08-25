@@ -47,7 +47,7 @@ void replaceAll(std::string filename, const std::string &s1, const std::string &
 
 int main(int ac, char **av)
 {
-    if (ac != 4)
+    if ((ac != 4) || !av[1] || !av[2] || !av[3])
     {
         std::cerr << "Enter filename, s1, s2" << std::endl;
     }
