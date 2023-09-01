@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:58:02 by zkarapet          #+#    #+#             */
-/*   Updated: 2023/09/01 20:16:56 by zkarapet         ###   ########.fr       */
+/*   Updated: 2023/09/01 20:28:23 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,18 @@ void replaceAll(std::string filename, const std::string &s1, const std::string &
 	if (!outFile)
 	{
 		std::cerr << "Error opening file " << filename << std::endl;
-		return;
+		return ;
 	}
 	pos = fileContents.find(s1, pos);
-//	while ((pos = fileContents.find(s1, pos)) != std::string::npos)
-//	{
+	while (pos != std::string::npos)
+	{
+		std::cout << "pos " << pos;
+		std::cout << "length " << s1.length();
 		fileContents.erase(pos, s1.length());
 		fileContents.insert(pos, s2);
-//		pos += s2.length();
-//	}
+		pos += s2.length() - s1.length();
+		fileContents.find(s1, pos);
+	}
 	outFile << fileContents;
 	outFile.close();
 }
