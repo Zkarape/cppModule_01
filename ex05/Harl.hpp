@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 19:17:05 by zkarapet          #+#    #+#             */
-/*   Updated: 2023/09/02 19:42:25 by zkarapet         ###   ########.fr       */
+/*   Created: 2023/09/02 19:37:47 by zkarapet          #+#    #+#             */
+/*   Updated: 2023/09/02 19:38:17 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main()
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+
+class Harl
 {
-    Harl   K;
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		Harl();
+		~Harl();
+		void complain(std::string level);
+};
 
-    K.complain("DEBUG");
-    K.complain("INFO");
-    K.complain("WARNING");
-    K.complain("ERROR");
-}
+#endif

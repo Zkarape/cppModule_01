@@ -1,8 +1,8 @@
-NAME      = karen
+NAME      = harl
 
 CC        = g++ 
 
-FLAGS     = #-Wextra -Werror #-Wall -std=c++98
+FLAGS     = -Wextra -Werror -Wall -std=c++98
 
 SRC_FILES = $(wildcard *.cpp)
 

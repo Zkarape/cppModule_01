@@ -1,4 +1,4 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int levelToIndex(char *level)
 {
@@ -16,7 +16,7 @@ int levelToIndex(char *level)
 
 int main(int ac, char **av)
 {
-    Karen K;
+    Harl K;
     if (ac == 2 && av[1])
     {
         int res = levelToIndex(av[1]);
@@ -24,13 +24,10 @@ int main(int ac, char **av)
         {
         case 0:
             K.complain("DEBUG");
-            break;
         case 1:
             K.complain("INFO");
-            break;
         case 2:
             K.complain("WARNING");
-            break;
         case 3:
             K.complain("ERROR");
             break;

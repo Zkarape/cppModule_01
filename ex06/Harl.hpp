@@ -1,5 +1,5 @@
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 #include <fstream>
@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <cstring>
 
-class Karen
+class Harl
 {
 private:
    void debug(void);
@@ -15,8 +15,8 @@ private:
    void warning(void);
 public:
    void error(void);
-    Karen();
-    ~Karen();
+    Harl();
+    ~Harl();
     void complain(std::string level);
 };
 
