@@ -13,8 +13,8 @@ private:
    void debug(void);
    void info(void);
    void warning(void);
-public:
    void error(void);
+public:
     Harl();
     ~Harl();
     void complain(std::string level);

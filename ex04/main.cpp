@@ -16,7 +16,7 @@
 #include <iomanip>
 #include <sstream>
 
-void replaceAll(std::string filename, const std::string &s1, const std::string &s2)
+void replaceAll(const std::string &filename, const std::string &s1, const std::string &s2)
 {
 	std::ifstream inputFile(filename);
 	std::stringstream buffer;
@@ -32,19 +32,17 @@ void replaceAll(std::string filename, const std::string &s1, const std::string &
 	}
 	inputFile.close();
 	fileContents = buffer.str();
-	std::ofstream outFile(filename.append(".replace"));
+	std::ofstream outFile(filename + ".replace");
 	if (!outFile)
 	{
 		std::cerr << "Error opening file " << filename << std::endl;
 		return ;
 	}
-	pos = fileContents.find(s1, pos);
-	while (pos != std::string::npos)
+	while ((pos = fileContents.find(s1, pos)) != std::string::npos)
 	{
 		fileContents.erase(pos, s1.length());
 		fileContents.insert(pos, s2);
 		pos += s2.length();
-		pos = fileContents.find(s1, pos);
 	}
 	outFile << fileContents;
 	outFile.close();
@@ -52,7 +50,7 @@ void replaceAll(std::string filename, const std::string &s1, const std::string &
 
 int main(int ac, char **av)
 {
-	if ((ac != 4) || !av[1] || !av[2] || !av[3] || !*av[1] || !*av[2])
+	if ((ac != 4))
 	{
 		std::cerr << "Enter filename, s1, s2" << std::endl;
 		return (0);

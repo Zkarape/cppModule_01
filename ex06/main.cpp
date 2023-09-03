@@ -17,6 +17,7 @@ int levelToIndex(char *level)
 int main(int ac, char **av)
 {
     Harl K;
+
     if (ac == 2 && av[1])
     {
         int res = levelToIndex(av[1]);

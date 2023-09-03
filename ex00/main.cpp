@@ -6,7 +6,7 @@ int main()
 
     z = newZombie("Zhenya");
     z->announce();
-    randomChump("RadiCue");
+    randomChump("DOC.E");
     delete z;
     return (0);
 }

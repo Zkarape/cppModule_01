@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(const std::string &name)
 {
     _name = name;
 	std::cout << "Zombie object " << _name << " created" << std::endl;

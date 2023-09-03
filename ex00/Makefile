@@ -1,6 +1,6 @@
 NAME      = brainz
 
-CC        = g++ 
+CC        = c++
 
 FLAGS     = -Wextra -Werror -Wall -std=c++98
 
@@ -8,7 +8,9 @@ SRC_FILES = $(wildcard *.cpp)
 
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
-%o: %.cpp
+HEADER = $(wildcard *.hpp)
+
+%.o: %.cpp  $(HEADER) Makefile
 		$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)

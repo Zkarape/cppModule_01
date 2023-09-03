@@ -9,7 +9,8 @@ private:
     Weapon *_wp;
     std::string _name;
 public:
-    HumanB(std::string name);
+	HumanB();
+    HumanB(std::string& name);
     ~HumanB();
     void    attack();
     void    setWeapon(Weapon& wp);

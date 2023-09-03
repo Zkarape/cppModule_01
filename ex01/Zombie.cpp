@@ -5,7 +5,7 @@ Zombie::Zombie()
     std::cout << "Default constructor is called\n";
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string& name)
 {
     _name = name;
 	std::cout << "Zombie object " << _name << " created" << std::endl;
