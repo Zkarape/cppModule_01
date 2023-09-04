@@ -10,7 +10,7 @@ private:
     std::string _name;
 public:
 	HumanB();
-    HumanB(std::string& name);
+    HumanB(const std::string& name);
     ~HumanB();
     void    attack();
     void    setWeapon(Weapon& wp);

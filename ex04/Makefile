@@ -12,7 +12,6 @@ HEADER = $(wildcard *.hpp)
 %.o: %.cpp  $(HEADER) Makefile
 		$(CC) $(FLAGS) -c $< -o $@
 
-
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)

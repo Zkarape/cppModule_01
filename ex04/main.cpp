@@ -21,8 +21,10 @@ void replaceAll(const std::string &filename, const std::string &s1, const std::s
 	std::ifstream inputFile(filename);
 	std::stringstream buffer;
 	std::string fileContents;
-	int pos = 0;
+	size_t pos = 0;
 
+	if (s1 == s2 || s1.empty())
+		return ;
 	if (inputFile.is_open())
 		buffer << inputFile.rdbuf();
 	else
@@ -36,13 +38,15 @@ void replaceAll(const std::string &filename, const std::string &s1, const std::s
 	if (!outFile)
 	{
 		std::cerr << "Error opening file " << filename << std::endl;
-		return ;
+		return;
 	}
-	while ((pos = fileContents.find(s1, pos)) != std::string::npos)
+	pos = fileContents.find(s1, pos);
+	while (pos != std::string::npos)
 	{
 		fileContents.erase(pos, s1.length());
 		fileContents.insert(pos, s2);
 		pos += s2.length();
+		pos = fileContents.find(s1, pos);
 	}
 	outFile << fileContents;
 	outFile.close();
@@ -50,7 +54,7 @@ void replaceAll(const std::string &filename, const std::string &s1, const std::s
 
 int main(int ac, char **av)
 {
-	if ((ac != 4))
+	if (ac != 4)
 	{
 		std::cerr << "Enter filename, s1, s2" << std::endl;
 		return (0);
